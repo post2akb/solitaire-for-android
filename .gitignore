@@ -1,0 +1,6 @@
+.gradle
+/solitaire/.idea/workspace.xml
+/solitaire/.idea/libraries
+.DS_Store
+build
+local.properties

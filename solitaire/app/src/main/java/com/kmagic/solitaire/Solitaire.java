@@ -19,12 +19,12 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Window;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
+import android.view.Window;
 import android.widget.TextView;
 
 // Base activity class.
@@ -115,6 +115,14 @@ public class Solitaire extends Activity {
     menu.add(0, MENU_STATS, 0, R.string.menu_stats);
     menu.add(0, MENU_HELP, 0, R.string.menu_help);
     return true;
+  }
+
+  @Override
+  public boolean onKeyDown(int keyCode, KeyEvent msg) {
+    if(keyCode == KeyEvent.KEYCODE_MENU){
+      openOptionsMenu();
+    }
+    return super.onKeyDown(keyCode, msg);
   }
 
   @Override

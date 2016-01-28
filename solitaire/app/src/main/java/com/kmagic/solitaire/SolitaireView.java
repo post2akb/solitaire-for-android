@@ -519,6 +519,8 @@ public class SolitaireView extends View {
     switch (keyCode) {
     case KeyEvent.KEYCODE_DPAD_CENTER:
     case KeyEvent.KEYCODE_SEARCH:
+    case KeyEvent.KEYCODE_VOLUME_UP:
+    case KeyEvent.KEYCODE_VOLUME_DOWN:
       if (mViewMode == MODE_TEXT) {
         ChangeViewMode(MODE_NORMAL);
       } else if (mViewMode == MODE_NORMAL) {
@@ -526,10 +528,10 @@ public class SolitaireView extends View {
         Refresh();
       }
       return true;
-      case KeyEvent.KEYCODE_BACK:
+    case KeyEvent.KEYCODE_BACK:
         Undo();
         return true;
-      }
+    }
     mRules.HandleEvents();
     return super.onKeyDown(keyCode, msg);
   }
